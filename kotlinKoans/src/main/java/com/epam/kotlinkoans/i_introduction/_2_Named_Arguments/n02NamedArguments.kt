@@ -5,7 +5,7 @@ import util.TODO
 import util.doc2
 
 // default values for arguments
-fun bar(i: Int, s: String = "", b: Boolean = true) {}
+fun bar(i: Int, s: String = " ", b: Boolean = true) {}
 
 fun usage() {
     // named arguments
@@ -23,7 +23,4 @@ fun todoTask2(): Nothing = TODO(
     documentation = doc2(),
     references = { collection: Collection<Int> -> task1(collection); collection.joinToString() })
 
-fun task2(collection: Collection<Int>): String {
-    todoTask2()
-    return collection.joinToString()
-}
+fun task2(collection: Collection<Int>) = collection.joinToString(prefix = "{", postfix = " } ")
